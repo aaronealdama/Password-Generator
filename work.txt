@@ -1,0 +1,49 @@
+ var password = [];
+    if (uppercaseChar === true) {
+        for (var i = 0; i <= length; i++) {
+            var checker = Math.floor(Math.random());
+            if (checker === 1) {
+            password[i] = capitalAlphabet[Math.floor(Math.random()*length)];
+            } else {
+                password[i] = '';
+            }
+        }
+    } else if (lowercaseChar === true) {
+        for (var i = 0; i <= length; i++) {
+            var checker = Math.floor(Math.random());
+            if (checker === 1) {
+            password[i] = alphabet[Math.floor(Math.random()*length)];
+            } else {
+                password[i] = '';
+            }
+        } 
+    } else if (specialChar === true) {
+        for (var i = 0; i <= length; i++) {
+            var checker = Math.floor(Math.random());
+            if (checker === 1) {
+            password[i] = specialCharacters[Math.floor(Math.random()*length)];
+            } else {
+                password[i] = '';
+            }
+        }
+    } else if (numericCharacters === true) {
+        for (var i = 0; i <= length; i++) {
+            var checker = Math.floor(Math.random());
+            if (checker === 1) {
+            password[i] = numericCharacters[Math.floor(Math.random()*length)];
+            } else {
+                password[i] = '';
+            }
+        }
+    }
+    for (var i = 0; i <= length; i++) {
+        if (password[i] === '' && uppercaseChar === true) {
+            password[i] = capitalAlphabet[Math.floor(Math.random()*length)];
+        } else if (password[i] === '' && lowercaseChar === true) {
+            password[i] = alphabet[Math.floor(Math.random()*length)];
+        } else if (password[i] === '' && specialChar === true) {
+            password[i] = specialCharacters[Math.floor(Math.random()*length)];
+        } else if (password[i] === '' && numericCharacters === true) {
+            password[i] = numericCharacters[Math.floor(Math.random()*length)];
+        }
+    }
