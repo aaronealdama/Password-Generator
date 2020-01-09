@@ -14,7 +14,7 @@ function passwordGenerator() {
     var speicalCharacters = ['!','"','#','$','%',"&","'","(",")","*","+",",","-",".","/",":",";","<","=",">","?","@","[","]","/","^","_","`","{","}","~"];
     var numericCharacters = ["1",'2','3','4','5','6','7','8','9','0'];
     
-    password = ''; 
+    var password = ''; 
     
     
 
@@ -23,7 +23,7 @@ function passwordGenerator() {
         for (var i = 0; i < length; i++) {
             var checker = Math.floor(Math.random());
             if (checker === 1) {
-            password[i] === capitalAlphabet[Math.floor(Math.random()*length)];
+            password[i] = capitalAlphabet[Math.floor(Math.random()*length)];
             } else {
                 password[i] = '';
             };
@@ -35,7 +35,7 @@ function passwordGenerator() {
         for (var i = 0; i < length; i++) {
             var checker = Math.floor(Math.random());
             if (checker === 1) {
-            password[i] === alphabet[Math.floor(Math.random()*length)];
+            password[i] = alphabet[Math.floor(Math.random()*length)];
             } else {
                 password[i] = '';
             };
@@ -46,7 +46,7 @@ function passwordGenerator() {
         for (var i = 0; i < length; i++) {
             var checker = Math.floor(Math.random());
             if (checker === 1) {
-            password[i] === specialCharacters[Math.floor(Math.random()*length)];
+            password[i] = specialCharacters[Math.floor(Math.random()*length)];
             } else {
                 password[i] = '';
             };
@@ -57,7 +57,7 @@ function passwordGenerator() {
         for (var i = 0; i < length; i++) {
             var checker = Math.floor(Math.random());
             if (checker === 1) {
-            password[i] === numericCharacters[Math.floor(Math.random()*length)];
+            password[i] = numericCharacters[Math.floor(Math.random()*length)];
             } else {
                 password[i] = '';
             };
