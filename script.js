@@ -155,7 +155,7 @@ function passwordGenerator() {
     var counter = 0;
     alert(
       "You did not select a parameter, you must choose atleast one for your password"
-    );
+    ); // redefines counterArr and counter to bring function to its original state
     while (
       uppercaseChar !== true &&
       lowercaseChar !== true &&
