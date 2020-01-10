@@ -9,6 +9,7 @@
     height: 100px;
     width: 150px;
     border-style: dotted;
+    border-radius: 10px;
 }
 
 .heading {
@@ -25,13 +26,14 @@
     padding: 30px;
     margin: 80px;
     box-shadow: 10px 10px 5px grey;
-    
+    overflow: scroll;
 }
 
 .password-container {
     background: white;
     padding: 30px;
     box-shadow: 10px 10px 5px grey;
+    overflow: scroll;
 }
 
 h1 {

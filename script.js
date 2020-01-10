@@ -11,7 +11,7 @@ function passwordGenerator() {
       length = prompt("Please choose a number between 8 and 128.");
     } // while the length is less than 8 or greater than 128 another prompt runs
   }
-  container.textContent = '';
+  container.textContent = ''; // resets the content within the password box so i didn't have to create another function
 
   var alphabet = [
     "a",
