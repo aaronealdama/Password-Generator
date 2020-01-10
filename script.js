@@ -106,8 +106,8 @@ function passwordGenerator() {
     specialCharacters,
     numericCharacters
   ];
-  var password = [];
-  var counterArr = [0, 1, 2, 3];
+  var password = []; // empty password which will be pushed random charcters
+  var counterArr = [0, 1, 2, 3]; // counter array which will be used in for loop
   var counter = 0;
   var uppercaseChar = confirm("Would you like uppercase characters?");
   if (uppercaseChar !== true) {
@@ -199,7 +199,7 @@ function passwordGenerator() {
         counter++;
       }
     }
-  }
+  } // if statement uses a while loop to ensure the user picks atleast one parameter if they clicked the password generation button
 
   for (var i = 0; i < length; i++) {
     var checker = Math.floor(Math.random() * counter); // checker generates a number between 0 and the length of the counterArr
