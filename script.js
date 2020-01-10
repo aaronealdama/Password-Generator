@@ -2,16 +2,14 @@ var button = document.querySelector(".generate");
 
 button.addEventListener("click", passwordGenerator, false);
 
-
-
 function passwordGenerator() {
   var length = prompt("Choose length between 8 and 128 characters.");
   if (length < 8 || length > 128) {
     while (length < 8 || length > 128) {
       length = prompt("Please choose a number between 8 and 128.");
-    }
+    } // while the length is less than 8 or greater than 128 another prompt runs
   }
-  
+
   var alphabet = [
     "a",
     "b",
@@ -102,16 +100,21 @@ function passwordGenerator() {
     "~"
   ];
   var numericCharacters = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "0"];
-  var passwordArray = [capitalAlphabet,alphabet,specialCharacters,numericCharacters];
+  var passwordArray = [
+    capitalAlphabet,
+    alphabet,
+    specialCharacters,
+    numericCharacters
+  ];
   var password = [];
-  var counterArr = [0,1,2,3];
+  var counterArr = [0, 1, 2, 3];
   var counter = 0;
-  var uppercaseChar = confirm("Would you like uppercase characters?"); 
+  var uppercaseChar = confirm("Would you like uppercase characters?");
   if (uppercaseChar !== true) {
     var index = counterArr.indexOf(0);
     if (index > -1) {
       counterArr.splice(index, 1);
-    }
+    } // if uppercaseChar is false then run code which removes an item at its index in counterArr
   } else {
     counter++;
   }
@@ -142,19 +145,74 @@ function passwordGenerator() {
   } else {
     counter++;
   }
-  console.log(counterArr);
-  console.log(counter);
+  if (
+    uppercaseChar !== true &&
+    lowercaseChar !== true &&
+    specialChar !== true &&
+    numericChar !== true
+  ) {
+    var counterArr = [0, 1, 2, 3];
+    var counter = 0;
+    alert(
+      "You did not select a parameter, you must choose atleast one for your password"
+    );
+    while (
+      uppercaseChar !== true &&
+      lowercaseChar !== true &&
+      specialChar !== true &&
+      numericChar !== true
+    ) {
+      var uppercaseChar = confirm("Would you like uppercase characters?");
+      if (uppercaseChar !== true) {
+        var index = counterArr.indexOf(0);
+        if (index > -1) {
+          counterArr.splice(index, 1);
+        }
+      } else {
+        counter++;
+      }
+      var lowercaseChar = confirm("Would you like lower case characters?");
+      if (lowercaseChar !== true) {
+        var index = counterArr.indexOf(1);
+        if (index > -1) {
+          counterArr.splice(index, 1);
+        }
+      } else {
+        counter++;
+      }
+      var specialChar = confirm("Would you like special characters?");
+      if (specialChar !== true) {
+        var index = counterArr.indexOf(2);
+        if (index > -1) {
+          counterArr.splice(index, 1);
+        }
+      } else {
+        counter++;
+      }
+      var numericChar = confirm("Would you like numeric characters?");
+      if (numericChar !== true) {
+        var index = counterArr.indexOf(3);
+        if (index > -1) {
+          counterArr.splice(index, 1);
+        }
+      } else {
+        counter++;
+      }
+    }
+  }
 
   for (var i = 0; i < length; i++) {
-    var checker = Math.floor(Math.random()*counter); // checker generates a number between 0 and the length of the counterArr
-    var random = counterArr[checker]; // random searches for a value within counterArr using checker
+    var checker = Math.floor(Math.random() * counter); // checker generates a number between 0 and the length of the counterArr
+    var random = counterArr[checker]; // random searches for a value at a particular index within counterArr using checker
     if (checker > counterArr.length) {
       while (checker > counterArr.length) {
         random--;
-      } // if checker happens to be greater then counterArr.length, it decrease random by one while its greater
+      } // if checker happens to be greater then counterArr.length, it decreases random by one while its greater
     }
-    var selected = passwordArray[random]; // takes random number and searches for the array associated with it in passwordArray
-    password[i] = selected[Math.floor(Math.random()*selected.length)]; // 
+    var selected = passwordArray[random]; // takes variable random and uses it as an index value to search for its associated array within passwordArray
+    password[i] = selected[Math.floor(Math.random() * selected.length)]; // a random character is generated from the passwordArray which is randomly indexed, as seen in selected, and is then pushed at password[i]
   }
+
   console.log(password.join(""));
+  return password;
 }
