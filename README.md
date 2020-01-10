@@ -4,4 +4,4 @@ The purpose of the application is for users seeking a secure password for import
 ![screenshot](https://github.com/aaronealdama/Password-Generator/blob/master/screenshot.PNG)
 
 Link to deployed Github Pages URL:
-https://aaronealdama.github.io/Password-Generator/index.html
+https://aaronealdama.github.io/Password-Generator/
