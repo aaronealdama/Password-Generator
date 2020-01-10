@@ -1,4 +1,6 @@
 var button = document.querySelector(".generate");
+var container = document.querySelector(".password");
+
 
 button.addEventListener("click", passwordGenerator, false);
 
@@ -9,6 +11,7 @@ function passwordGenerator() {
       length = prompt("Please choose a number between 8 and 128.");
     } // while the length is less than 8 or greater than 128 another prompt runs
   }
+  container.textContent = '';
 
   var alphabet = [
     "a",
@@ -213,6 +216,12 @@ function passwordGenerator() {
     password[i] = selected[Math.floor(Math.random() * selected.length)]; // a random character is generated from the passwordArray which is randomly indexed, as seen in selected, and is then pushed at password[i]
   }
 
-  console.log(password.join(""));
+  password = password.join("");
+  console.log(password)
+  
+  container.textContent = password;
   return password;
 }
+
+
+
