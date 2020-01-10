@@ -108,7 +108,7 @@ function passwordGenerator() {
     alphabet,
     specialCharacters,
     numericCharacters
-  ];
+  ]; // array which stores the other arrays which will be important for generating random characters in the for loop
   var password = []; // empty password which will be pushed random charcters
   var counterArr = [0, 1, 2, 3]; // counter array which will be used in for loop
   var counter = 0;
@@ -117,7 +117,7 @@ function passwordGenerator() {
     var index = counterArr.indexOf(0);
     if (index > -1) {
       counterArr.splice(index, 1);
-    } // if uppercaseChar is false then run code which removes an item at its index in counterArr
+    } // if confirm is false then run code which removes an item at its index in counterArr
   } else {
     counter++;
   }
