@@ -9,6 +9,7 @@
   width: 150px;
   border-style: dotted;
   border-radius: 10px;
+  overflow: scroll;
 }
 
 .heading {
